@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center" scroll-y="true">
+  <ion-card>
+    <img alt="Silhouette of mountains" src="assets/img/gifnunu.gif" />
+
+    <ion-card-content class="ion-text-center">
+      <!-- Contenido del segundo ion-content -->
+      <ion-card>
+        <!-- ... (resto del contenido) ... -->
+        <ion-card-header>
+          <ion-card-title>{{ welcomeMessage }}</ion-card-title>
+        </ion-card-header>
+        <!-- ... (resto del contenido) ... -->
+      </ion-card>
+    </ion-card-content>
+    
+    <div class="ion-padding">
+      <ion-button [routerLink]="['/home']" expand="full">Cerrar sesión</ion-button>
+    </div>
+  </ion-card>
+</ion-content>
