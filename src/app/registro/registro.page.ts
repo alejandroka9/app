@@ -18,7 +18,7 @@ export class RegistroPage {
     if (this.username && this.password && this.fechaNacimiento && this.nivelEducacional) {
       const user = {
         username: this.username,
-        password: this.password,
+        password: this.password.toString(),
         fechaNacimiento: this.fechaNacimiento,
         nivelEducacional: this.nivelEducacional
       };
