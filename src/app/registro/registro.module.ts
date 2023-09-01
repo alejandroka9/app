@@ -8,12 +8,20 @@ import { RegistroPageRoutingModule } from './registro-routing.module';
 
 import { RegistroPage } from './registro.page';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroPageRoutingModule
+    RegistroPageRoutingModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+
   ],
   declarations: [RegistroPage]
 })

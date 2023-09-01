@@ -4,7 +4,7 @@
     --placeholder-color: var(--ion-color-primary); /* Cambia el color del texto de marcador de posición */
     --color: var(--ion-color-secondary); /* Cambia el color del texto seleccionado */
     --border-color: var(--ion-color-tertiary); /* Cambia el color del borde */
-    --background: rgba(0, 0, 0, 0.05); /* Cambia el fondo */
+    --background: rgba(47, 75, 189, 0.05); /* Cambia el fondo */
     border-radius: 8px; /* Agrega esquinas redondeadas */
     padding: 10px; /* Agrega espacio alrededor del campo */
   }
@@ -14,3 +14,21 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
   }
   
+
+//color calendario
+
+
+
+/* Estilos para el botón de abrir el calendario */
+.mat-datepicker-toggle {
+  color: rgb(238, 255, 0);
+}
+
+
+//ion-content {
+  //--background: #a5d8e5; /* para cambiar el fondo*/
+//}
+
+
+//animacion limpiar campos
+

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -11,6 +12,7 @@ export class RegistroPage {
   password: string = '';
   fechaNacimiento: string = '';
   nivelEducacional: string = '';
+
 
   constructor(private navCtrl: NavController) {}
 

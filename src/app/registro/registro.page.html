@@ -17,10 +17,13 @@
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input type="password" [(ngModel)]="password" type="password" inputmode="numeric" maxLength="4" placeholder="Ingrese su contraseña"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Fecha de Nacimiento</ion-label>
-      <ion-datetime presentation="date" [(ngModel)]="fechaNacimiento" class="custom-datetime"></ion-datetime>
-    </ion-item>
+    <!-- Es calendario de estados unidos, osea primero el mes y luego el dia -->
+    <mat-form-field appearance="outline">
+      <mat-label style="color: white;">Fecha de Nacimiento</mat-label>
+      <input style="color: white;" matInput [matDatepicker]="picker" [(ngModel)]="fechaNacimiento">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
     
     <ion-item>
       <ion-label position="floating">Nivel Educacional</ion-label>
@@ -28,12 +31,11 @@
         <ion-select-option value="primaria">Primaria</ion-select-option>
         <ion-select-option value="secundaria">Secundaria</ion-select-option>
         <ion-select-option value="universidad">Universidad</ion-select-option>
-        <!-- Agrega más opciones según sea necesario -->
       </ion-select>
     </ion-item>
   </ion-list>
   <div class="button-container">
     <ion-button expand="full" (click)="registrar()" shape="round">Registrarse</ion-button>
-    <ion-button expand="full" (click)="limpiarCampos()" shape="round" color="danger">Limpiar Campos</ion-button>
+<ion-button expand="full" (click)="limpiarCampos()" shape="round" color="danger" class="slide-out">Limpiar Campos</ion-button>
   </div>
 </ion-content>
