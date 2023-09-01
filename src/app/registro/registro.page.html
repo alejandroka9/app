@@ -9,11 +9,11 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-list>
-    <ion-item>
+    <ion-item [class.slide-in-inputs]="isAnimating">
       <ion-label position="floating">Usuario</ion-label>
       <ion-input type="text" [(ngModel)]="username" type="text" minLength="3" maxLength="8" placeholder="Ingrese su usuario"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item [class.slide-in-inputs]="isAnimating">
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input type="password" [(ngModel)]="password" type="password" inputmode="numeric" maxLength="4" placeholder="Ingrese su contraseña"></ion-input>
     </ion-item>
@@ -39,3 +39,4 @@
 <ion-button expand="full" (click)="limpiarCampos()" shape="round" color="danger" class="slide-out">Limpiar Campos</ion-button>
   </div>
 </ion-content>
+

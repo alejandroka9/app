@@ -11,6 +11,7 @@ export class RegistroPage {
   username: string = '';
   password: string = '';
   fechaNacimiento: string = '';
+  isAnimating: boolean = false;
   nivelEducacional: string = '';
 
 
@@ -40,5 +41,12 @@ export class RegistroPage {
     this.password = '';
     this.fechaNacimiento = '';
     this.nivelEducacional = '';
+    this.isAnimating = true;
+
+
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 1000);
   }
 }
+
