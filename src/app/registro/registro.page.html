@@ -1,42 +1,114 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Registro</ion-title>
+    <!-- Aqui van los botones para navegar entre paginas -->
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="perfil">
+        <ion-label>Mis datos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="certificados">
+        <ion-label>Certificados</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="experiencia">
+        <ion-label>Experiencia</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-list>
-    <ion-item [class.slide-in-inputs]="isAnimating">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="username" type="text" minLength="3" maxLength="8" placeholder="Ingrese su usuario"></ion-input>
-    </ion-item>
-    <ion-item [class.slide-in-inputs]="isAnimating">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="password" type="password" inputmode="numeric" maxLength="4" placeholder="Ingrese su contraseña"></ion-input>
-    </ion-item>
-    <!-- Es calendario de estados unidos, osea primero el mes y luego el dia -->
-    <mat-form-field appearance="outline">
-      <mat-label style="color: white;">Fecha de Nacimiento</mat-label>
-      <input style="color: white;" matInput [matDatepicker]="picker" [(ngModel)]="fechaNacimiento">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    
-    <ion-item>
-      <ion-label position="floating">Nivel Educacional</ion-label>
-      <ion-select [(ngModel)]="nivelEducacional">
-        <ion-select-option value="primaria">Primaria</ion-select-option>
-        <ion-select-option value="secundaria">Secundaria</ion-select-option>
-        <ion-select-option value="universidad">Universidad</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-  <div class="button-container">
-    <ion-button expand="full" (click)="registrar()" shape="round">Registrarse</ion-button>
-<ion-button expand="full" (click)="limpiarCampos()" shape="round" color="danger" class="slide-out">Limpiar Campos</ion-button>
-  </div>
-</ion-content>
 
+<ion-content>
+  <ion-card>
+    <ion-card-content class="ion-padding" *ngIf="selectedSegment === 'perfil'">
+        <ion-list>
+          <ion-item [class.slide-in-inputs]="isAnimating">
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="username" type="text" minLength="3" maxLength="8" placeholder="Ingrese su usuario"></ion-input>
+          </ion-item>
+          <ion-item [class.slide-in-inputs]="isAnimating">
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password" type="password" inputmode="numeric" maxLength="4" placeholder="Ingrese su contraseña"></ion-input>
+          </ion-item>
+          <!-- Es calendario de estados unidos, osea primero el mes y luego el dia -->
+          <mat-form-field appearance="outline">
+            <mat-label style="color: white;">Fecha de Nacimiento</mat-label>
+            <input style="color: white;" matInput [matDatepicker]="picker" [(ngModel)]="fechaNacimiento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          
+          <ion-item>
+            <ion-label position="floating">Nivel Educacional</ion-label>
+            <ion-select [(ngModel)]="nivelEducacional">
+              <ion-select-option value="primaria">Primaria</ion-select-option>
+              <ion-select-option value="secundaria">Secundaria</ion-select-option>
+              <ion-select-option value="universidad">Universidad</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <div class="button-container">
+          <ion-button expand="full" (click)="registrar()" shape="round">Registrarse</ion-button>
+          <ion-button expand="full" (click)="limpiarCampos()" shape="round" color="danger" class="slide-out">Limpiar Campos</ion-button>
+          <ion-button expand="full" (click)="volver()" shape="round">Volver</ion-button>
+        </div>
+    </ion-card-content>
+
+    
+    <ion-card-content *ngIf="selectedSegment === 'certificados'" class="certificados-section">
+      <!-- Contenido de Certificados -->
+      <ion-item>
+        <ion-label position="floating">Empresa:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Año Inicio:</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Actualmente trabaja aquí:</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Año Término:</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Cargo:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    
+
+    <ion-card-content *ngIf="selectedSegment === 'experiencia'" class="experiencia-section">
+      <!-- Contenido de Experiencia -->
+      <ion-item>
+        <ion-label>Nombre del Certificado:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Fecha Obtención:</ion-label>
+        <ion-input type="date"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Certificado vencido:</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Fecha:</ion-label>
+        <ion-input type="date"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    
+    
+
+
+  </ion-card>
+
+
+</ion-content>

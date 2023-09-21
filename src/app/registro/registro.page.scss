@@ -46,3 +46,54 @@
 .slide-in-inputs {
   animation: slideInInputs 1s;
 }
+
+
+
+
+
+
+/* Estilo personalizado para la sección de Certificados */
+.certificados-section {
+  background-color: #276f4c; /* Cambia el color de fondo */
+  padding: 20px; /* Cambia el espaciado interior */
+  border-radius: 10px; /* Aplica bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 1, 11, 0.2); /* Agrega una sombra */
+  color: rgb(0, 0, 0); /* Cambia el color del texto a blanco */
+}
+
+/* Estilo para los elementos de la sección de Certificados */
+.certificados-section ion-item {
+  --ion-item-background: transparent; /* Fondo de los items como transparente */
+  color: white; /* Cambia el color del texto a blanco */
+  margin-bottom: 12px; /* Espacio entre elementos */
+}
+
+/* Estilo para los checkboxes en la sección de Certificados */
+.certificados-section ion-checkbox {
+  --background: #fff; /* Cambia el color de fondo del checkbox */
+}
+
+
+
+
+
+/* Estilo personalizado para la sección de Experiencia */
+.experiencia-section {
+  background-color: #2c1a4f; /* Cambia el color de fondo */
+  padding: 15px; /* Cambia el espaciado interior */
+  border: 1px solid #03c300; /* Agrega un borde */
+  border-radius: 8px; /* Aplica bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+  margin-top: 20px; /* Espacio superior */
+}
+
+/* Estilo para los elementos de la sección de Experiencia */
+.experiencia-section ion-item {
+  --ion-item-background: transparent; /* Fondo de los items como transparente */
+  margin-bottom: 12px; /* Espacio entre elementos */
+}
+
+/* Estilo para los checkboxes en la sección de Experiencia */
+.experiencia-section ion-checkbox {
+  --background: #007bff; /* Cambia el color de fondo del checkbox */
+}

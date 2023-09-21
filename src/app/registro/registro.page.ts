@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -13,9 +12,13 @@ export class RegistroPage {
   fechaNacimiento: string = '';
   isAnimating: boolean = false;
   nivelEducacional: string = '';
-
+  selectedSegment: string = 'perfil';
 
   constructor(private navCtrl: NavController) {}
+
+  cambiarSegment(segment: string) {
+    this.selectedSegment = segment;
+  }
 
   registrar() {
     if (this.username && this.password && this.fechaNacimiento && this.nivelEducacional) {
@@ -35,7 +38,6 @@ export class RegistroPage {
     }
   }
   
-
   limpiarCampos() {
     this.username = '';
     this.password = '';
@@ -43,10 +45,13 @@ export class RegistroPage {
     this.nivelEducacional = '';
     this.isAnimating = true;
 
-
     setTimeout(() => {
       this.isAnimating = false;
     }, 1000);
   }
-}
 
+  // Función para volver a la página de inicio
+  volver() {
+    this.navCtrl.navigateBack('/home');
+  }
+}
